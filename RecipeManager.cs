@@ -1,8 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
-using Terraria.Localization;
-using System;
 
 namespace SpellbladeRevised
 {

@@ -13,10 +13,4 @@
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assassin\" />
-    <Folder Include="Hunter\" />
-    <Folder Include="Spellblade\" />
-    <Folder Include="Technomancer\" />
-  </ItemGroup>
 </Project>

@@ -1,5 +1,4 @@
-﻿using SpellbladeRevised.Items.Weapons.Hardmode;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -23,8 +22,6 @@ namespace SpellbladeRevised.NPCs
 				case NPCID.WallofFlesh:
 					if (SpellbladeWorld.weaponLevel < 3)
 						SpellbladeWorld.weaponLevel = 3;
-					if (Main.rand.Next(Main.expertMode ? 2 : 4) == 0)
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Caliburn>());
 					break;
 				case NPCID.SkeletronPrime:
 				case NPCID.TheDestroyer:

@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.Xna.Framework;
-using SpellbladeRevised.Projectiles;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-using Terraria.Utilities;
+﻿using Terraria.ModLoader;
 
 namespace SpellbladeRevised.Spellblade.Items.Weapons
 {
