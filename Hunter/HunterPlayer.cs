@@ -5,7 +5,11 @@ namespace SpellbladeRevised.Hunter
 {
     public class HunterPlayer : ModPlayerBase
     {
-        public override Color classTextColor => throw new NotImplementedException();
-        public override string classTitleText => throw new NotImplementedException();
+        public override Color classTextColor => new Color(18, 107, 0);
+        public override string classTitleText => "-Hunter Class-";
+
+        public override void ResetVariables()
+        {
+        }
     }
 }

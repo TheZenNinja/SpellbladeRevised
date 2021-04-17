@@ -1,1 +1,9 @@
-Spellblade Class Revised is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Adds in subclass for the main Terraria classes.
+
+Assassin (Melee)
+
+Hunter (Ranger)
+
+Spellblade (Mage)
+
+Technomancer (Summoner)

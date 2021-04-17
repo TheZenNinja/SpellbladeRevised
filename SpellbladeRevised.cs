@@ -43,6 +43,7 @@ namespace SpellbladeRevised
 					sbPlayer.arcaneCurse = reader.ReadBoolean();
 
 					TechnomancerPlayer tmPlayer = Main.player[playernumber].GetModPlayer<TechnomancerPlayer>();
+					tmPlayer.spawnStacks = reader.ReadByte();
 
 					break;
 				default:

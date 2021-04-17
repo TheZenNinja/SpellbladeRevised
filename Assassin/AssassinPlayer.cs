@@ -5,7 +5,11 @@ namespace SpellbladeRevised.Assassin
 {
     public class AssassinPlayer : ModPlayerBase
     {
-        public override Color classTextColor => throw new NotImplementedException();
-        public override string classTitleText => throw new NotImplementedException();
+        public override Color classTextColor => new Color(87, 3, 3);
+        public override string classTitleText => "-Assassin Class-";
+
+        public override void ResetVariables()
+        {
+        }
     }
 }

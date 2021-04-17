@@ -19,20 +19,11 @@ namespace SpellbladeRevised.Spellblade
 		- Resouce replenishment item: Use GlobalNPC.NPCLoot to drop the item. ModItem.OnPickup and ModItem.ItemSpace will allow it to behave like Mana Star or Heart. Use code similar to Player.HealEffect to spawn (and sync) a colored number suitable to your resource.
 		*/
 
-		public override void ResetEffects()
-		{
-			ResetVariables();
-		}
-
-		public override void UpdateDead()
-		{
-			ResetVariables();
-		}
-
-		private void ResetVariables()
+		public override void ResetVariables()
 		{
 			arcaneCurse = false;
 		}
+
 		public override void clientClone(ModPlayer clientClone)
 		{
 			SpellbladePlayer clone = clientClone as SpellbladePlayer;
@@ -41,11 +32,6 @@ namespace SpellbladeRevised.Spellblade
 			clone.arcaneCurse = arcaneCurse;
 		}
 
-		public void ForceAltUse()
-		{
-			player.altFunctionUse = 2;
-			player.HeldItem.modItem.CanUseItem(player);
-		}
         public override void GetHealMana(Item item, bool quickHeal, ref int healValue)
         {
 			if (!arcaneCurse)
