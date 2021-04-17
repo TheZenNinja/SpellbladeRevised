@@ -1,5 +1,20 @@
 # SpellbladeRevised
 
+Class Concepts
+
+-mage subclass
+--Spellblade = short range mage class that gets mana back with close range hits
+
+-Ranger subclass
+--hunter = attacks put marks on enemies and certain attacks detonate marks
+
+
+-Melee subclass
+--Assassin = really close range melee class with a parry mechanic to deflect damage/projectiles
+
+-Summoner subclass
+--Technomancer = 2 weapons, a ranged gun/laser that gives a buff after 4 hits, with the buff youre able to summon a drone for a short time (there are no limits to how many can be summoned)
+
 -spellblade class
 --spellblade player
 --spellblade base item
