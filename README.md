@@ -2,6 +2,8 @@
 
 Class Concepts
 
+All these subclasses start after brain/eater or hardmode
+
 -mage subclass
 --Spellblade = short range mage class that gets mana back with close range hits
 
