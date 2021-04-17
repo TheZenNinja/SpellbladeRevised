@@ -7,7 +7,10 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
+using SpellbladeRevised.Assassin;
+using SpellbladeRevised.Hunter;
 using SpellbladeRevised.Spellblade;
+using SpellbladeRevised.Technomancer;
 
 namespace SpellbladeRevised
 {
@@ -37,10 +40,14 @@ namespace SpellbladeRevised
 					// SyncPlayer will be called automatically, so there is no need to forward this data to other clients.
 					byte playernumber = reader.ReadByte();
 
-					SpellbladePlayer sbPlayer = Main.player[playernumber].GetModPlayer<SpellbladePlayer>();
-					sbPlayer.arcaneCurse = reader.ReadBoolean();
+					AssassinPlayer asPlayer = Main.player[playernumber].GetModPlayer<AssassinPlayer>();
 					
+					SpellbladePlayer sbPlayer = Main.player[playernumber].GetModPlayer<SpellbladePlayer>();
+					
+					HunterPlayer hPlayer = Main.player[playernumber].GetModPlayer<HunterPlayer>();
+					sbPlayer.arcaneCurse = reader.ReadBoolean();
 
+					TechnomancerPlayer tmPlayer = Main.player[playernumber].GetModPlayer<TechnomancerPlayer>();
 
 					break;
 				default:

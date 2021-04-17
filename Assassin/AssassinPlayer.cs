@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpellbladeRevised.Assassin
 {
-    public class Assassin : ModPlayerBase
+    public class AssassinPlayer : ModPlayerBase
     {
         public override Color classTextColor => throw new NotImplementedException();
         public override string classTitleText => throw new NotImplementedException();
