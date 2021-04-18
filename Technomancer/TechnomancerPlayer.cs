@@ -1,25 +1,32 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
+using SpellbladeRevised.Technomancer.Buffs;
+using SpellbladeRevised.Technomancer.Minions;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace SpellbladeRevised.Technomancer
 {
     public class TechnomancerPlayer : ModPlayerBase
     {
-        public override Color classTextColor => new Color(161, 37, 186);
-        public override string classTitleText => "-Technomancer Class-";
+        public static Color classTextColor => new Color(161, 37, 186);
+        public static string classTitleText => "-Technomancer Class-";
 
         //if stacks >= max stacks give the player a buff that allows them to spawn a drone
-        public byte spawnStacks;
-        public static readonly byte spawnStacksMax = 4;
-
+        public int spawnStacks;
+        public static readonly int spawnStacksMax = 4;
         /// <summary>
         /// Adds a stack of spawnStacks
         /// </summary>
         public void TryToGainStacks()
         {
             if (spawnStacks < spawnStacksMax)
-                spawnStacks++;
+            {
+                spawnStacks += 1;
+            }
+            else if (!player.HasBuff(ModContent.BuffType<CanSpawnDroneBuff>()))
+            {
+                player.AddBuff(ModContent.BuffType<CanSpawnDroneBuff>(), 180);
+            }
         }
         public void RemoveStacks()
         {
@@ -30,11 +37,33 @@ namespace SpellbladeRevised.Technomancer
             return spawnStacks >= spawnStacksMax;
         }
 
-        public override void ResetVariables()
+        public float getMinionCount()
         {
-            spawnStacks = 0;
+            float minions = 0;
+
+            for (int i = 0; i < Main.maxProjectiles; i++)
+            {
+                Projectile p = Main.projectile[i];
+
+                if (p.GetType() == typeof(TechnoMinionBase))
+                    continue;
+
+                if (p.active && p.owner == player.whoAmI && p.minionSlots > 0)
+                    minions += p.minionSlots;
+            }
+
+            return minions;
+        }
+        public override void PostUpdateMiscEffects()
+        {
+            UpdateResource();
         }
 
+        private void UpdateResource()
+        {
+
+            spawnStacks = Utils.Clamp(spawnStacks, 0, spawnStacksMax);
+        }
         public override void clientClone(ModPlayer clientClone)
         {
             TechnomancerPlayer clone = clientClone as TechnomancerPlayer;
@@ -49,6 +78,10 @@ namespace SpellbladeRevised.Technomancer
             packet.Write((byte)player.whoAmI);
             packet.Write(spawnStacks);
             packet.Send(toWho, fromWho);
+        }
+
+        public override void ResetVariables()
+        {
         }
     }
 }

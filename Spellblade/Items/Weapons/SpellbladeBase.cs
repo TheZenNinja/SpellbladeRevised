@@ -2,20 +2,20 @@
 
 namespace SpellbladeRevised.Spellblade.Items.Weapons
 {
-	public abstract class SpellbladeBase : ModItem
-	{
-		public static readonly int ManaRegenT1 = 8;
-		public static readonly int ManaRegenT2 = 12;
-		public static readonly int ManaRegenT3 = 20;
-		public static readonly int ManaRegenT4 = 30;
-		public static readonly int ManaRegenT5 = 40;
-		public static readonly int ManaRegenT6 = 50;
-		public static readonly int ManaRegenT7 = 75;
-		public static readonly int ManaRegenT8 = 100;
+    public abstract class SpellbladeBase : ModItem
+    {
+        public static readonly int ManaRegenT1 = 8;
+        public static readonly int ManaRegenT2 = 12;
+        public static readonly int ManaRegenT3 = 20;
+        public static readonly int ManaRegenT4 = 30;
+        public static readonly int ManaRegenT5 = 40;
+        public static readonly int ManaRegenT6 = 50;
+        public static readonly int ManaRegenT7 = 75;
+        public static readonly int ManaRegenT8 = 100;
 
-		protected abstract int onHitManaRegen { get; }
+        protected abstract int onHitManaRegen { get; }
 
-		/* zombie code
+        /* zombie code
 		#region casting attribues
 		protected virtual int castUseAnimationTime { get; } = -1;
 		protected virtual int castReuseDelay { get; } = -1;
@@ -167,5 +167,5 @@ namespace SpellbladeRevised.Spellblade.Items.Weapons
 			
 			return true;
 		}*/
-	}
+    }
 }
